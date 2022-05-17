@@ -11,11 +11,10 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     steps:
-
-    - name: Step 1 - checkout a souce code
-      uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
+      - name: Step 1 - checkout a souce code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Step 2 - Create a temporary artifact downloads folder
         run: mkdir downloads
