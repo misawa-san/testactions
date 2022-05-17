@@ -1,7 +1,7 @@
 # Publish GitHub workflow artifacts tutorial example
 name: Publish GitHub Actions Artifacts Example
 
-on: push
+  pull_request:
 
 jobs:
        
@@ -9,18 +9,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Step 1 - Create a temporary artifact downloads folder
+    - name: Step 1 - checkout a souce code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Step 2 - Create a temporary artifact downloads folder
         run: mkdir downloads
-        
-      - name: step 2 - Add artifacts to publish to the temp folder
+
+      - name: Step 3 - test
+        run: docker-compose -f docker-compose.yml up -d --build
+
+      - name: step 4 - Add artifacts to publish to the temp folder
         run: |
           cd downloads
-          echo 'alpha'    > alpha.html
-          echo 'bravo'    > bravo.html
-          echo 'charlie'  > charlie.html
+          cp -R ../robot/result/SILS/ .
           cd ..
     
-      - name: Step 3 - Use the Upload Artifact GitHub Action
+      - name: Step 5 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
           name: assets-for-download
