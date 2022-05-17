@@ -1,9 +1,7 @@
 # Publish GitHub workflow artifacts tutorial example
 name: Publish GitHub Actions Artifacts Example
 
-on:
-  pull_request:
-    types: [opened, synchronize]
+on: push
 
 jobs:
        
