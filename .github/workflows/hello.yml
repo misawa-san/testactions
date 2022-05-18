@@ -21,6 +21,7 @@ jobs:
         run: |
           sudo chmod -R 777 .
           docker-compose -f docker-compose.yml up -d --build
+          docker-compose -f docker-compose.yml up -d --build
 
       - name: step 4 - Add artifacts to publish to the temp folder
         run: |
