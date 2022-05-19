@@ -26,7 +26,7 @@ jobs:
       - name: step 4 - Add artifacts to publish to the temp folder
         run: |
           cd downloads
-          cp -R ../robot/result/SILS/ .
+          cp -R ./ .
           cd ..
     
       - name: Step 5 - Use the Upload Artifact GitHub Action
