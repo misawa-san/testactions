@@ -26,7 +26,9 @@ jobs:
       - name: step 4 - Add artifacts to publish to the temp folder
         run: |
           cd downloads
-          cp -R ../ .
+          cp -R ../ExteriorLightController/ .
+          cp -R ../FrontSpotLights/ .
+          cp -R ../robot/ .
           cd ..
     
       - name: Step 5 - Use the Upload Artifact GitHub Action
