@@ -7,7 +7,7 @@ jobs:
        
   archive-build-artifacts:
     name: Run tests
-    runs-on: : ubuntu-20.04
+    runs-on: : ubuntu-18.04
     steps:
       - name: Step 1 - checkout a souce code
         uses: actions/checkout@v2
