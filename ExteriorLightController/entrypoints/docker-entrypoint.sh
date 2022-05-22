@@ -2,10 +2,10 @@
 
 touch ok.txt
 
-source "/opt/ros/$ROS_DISTRO/setup.bash"
+source "/opt/ros/$ROS_DISTRO/setup.bash" > setuplog.txt
 cd src
-colcon build --symlink-install
-source ./install/local_setup.bash
+colcon build --symlink-install > colconlog.txt
+source ./install/local_setup.bash > localsetuplog.txt
 ros2 run pubsub ros_task > publog.txt &
 ros_pid=$!
 
