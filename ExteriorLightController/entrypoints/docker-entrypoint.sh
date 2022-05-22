@@ -1,7 +1,8 @@
 #!/bin/bash
 
 touch ok.txt
-
+echo $ROS_DISTRO > ROSlog.txt
+ls -l /opt/ros/$ROS_DISTRO > optlog.txt
 source "/opt/ros/$ROS_DISTRO/setup.bash" > setuplog.txt 2>&1
 cd src
 colcon build --symlink-install > colconlog.txt
