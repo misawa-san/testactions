@@ -1,5 +1,7 @@
 #!/bin/bash
 
+touch ok.txt
+
 source "/opt/ros/$ROS_DISTRO/setup.bash"
 cd src
 colcon build --symlink-install
