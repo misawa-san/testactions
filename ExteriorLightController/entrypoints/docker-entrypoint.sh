@@ -2,9 +2,9 @@
 
 touch ok.txt
 echo $ROS_DISTRO > ROSlog.txt
-chmod ugo+x /opt/ros/$ROS_DISTRO/setup.bash > chmodlog.txt 2>&1
+chmod ugo+x /opt/ros/$ROS_DISTRO/setup.bash > chmodlog.txt
 ls -l /opt/ros/$ROS_DISTRO > optlog.txt
-source "/opt/ros/$ROS_DISTRO/setup.bash" > setuplog.txt 2>&1
+source "/opt/ros/$ROS_DISTRO/setup.bash" > setuplog.txt
 cd src
 colcon build --symlink-install > colconlog.txt
 source ./install/local_setup.bash > localsetuplog.txt
