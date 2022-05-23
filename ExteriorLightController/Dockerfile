@@ -37,10 +37,10 @@ RUN export ROS_DISTRO=dashing && \
     apt-get install -y ros-$ROS_DISTRO-desktop \
     sudo python3-colcon-common-extensions python3-rosdep python3-argcomplete && \
     sudo apt install -y ros-dashing-launch* && \
-    apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
-    apt-get install -y ros-$ROS_DISTRO-test-msgs && \
-    rosdep init && \
-    rosdep update
+    sudo apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
+    sudo apt-get install -y ros-$ROS_DISTRO-test-msgs && \
+    sudo rosdep init && \
+    sudo rosdep update
 
 ## 環境設定
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
