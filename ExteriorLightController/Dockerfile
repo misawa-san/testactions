@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV ROS_DISTRO dashing
 
 # Set locale
-RUN sudo apt-get update && apt-get install -y locales && \
+RUN apt-get update && apt-get install -y locales && \
     dpkg-reconfigure locales && \
     locale-gen ja_JP ja_JP.UTF-8 && \
     update-locale LC_ALL=ja_JP.UTF-8 LANG=ja_JP.UTF-8
@@ -13,12 +13,12 @@ ENV LANG     ja_JP.UTF-8
 ENV LANGUAGE ja_JP.UTF-8
 
 # Setup Sources
-RUN sudo apt-get update && \
-    sudo apt-get install -y sudo && \
-    sudo apt-get install build-essential -y && \
-    sudo apt-get install -y gcc && \
-    sudo apt-get install -y g++ && \
-    sudo apt-get install -y cmake && \
+RUN apt-get update && \
+    apt-get install -y sudo && \
+    apt-get install build-essential -y && \
+    apt-get install -y gcc && \
+    apt-get install -y g++ && \
+    apt-get install -y cmake && \
     sudo apt-get install -y python3-pip && \
     sudo pip3 install gcovr && \
     sudo pip3 install -U argcomplete && \
