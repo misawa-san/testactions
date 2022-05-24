@@ -19,11 +19,11 @@ RUN apt-get update && \
     apt-get install -y gcc && \
     apt-get install -y g++ && \
     apt-get install -y cmake && \
-    sudo apt-get install -y python3-pip && \
-    sudo pip3 install gcovr && \
-    sudo pip3 install -U argcomplete && \
-    sudo pip3 install flask==1.1.1 && \
-    sudo pip3 install sysv_ipc
+    apt-get install -y python3-pip && \
+    pip3 install gcovr && \
+    pip3 install -U argcomplete && \
+    pip3 install flask==1.1.1 && \
+    pip3 install sysv_ipc
 
 RUN sudo apt-get update && \
     sudo apt-get install -y curl gnupg2 lsb-release && \
