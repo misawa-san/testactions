@@ -39,7 +39,7 @@ RUN export ROS_DISTRO=dashing && \
     sudo apt install -y ros-dashing-launch* && \
     apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
     apt-get install -y ros-$ROS_DISTRO-test-msgs && \
-    rosdep init && \
+    sudo rosdep init && \
     rosdep update
 
 ## 環境設定
