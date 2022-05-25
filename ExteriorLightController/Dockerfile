@@ -40,7 +40,7 @@ RUN export ROS_DISTRO=dashing && \
     apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
     apt-get install -y ros-$ROS_DISTRO-test-msgs && \
     sudo rosdep init && \
-    rosdep update
+    sudo rosdep update
 
 ## 環境設定
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
