@@ -23,12 +23,12 @@ RUN apt-get update && \
     pip3 install gcovr && \
     pip3 install -U argcomplete && \
     pip3 install flask==1.1.1 && \
-    pip3 install sysv_ipc
+    sudo pip3 install sysv_ipc
 
 RUN sudo apt-get update && \
     sudo apt-get install -y curl gnupg2 lsb-release && \
     curl http://repo.ros2.org/repos.key | sudo apt-key add - && \
-    sudo sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu \
+    sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu \
     `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list' && \
     sudo apt-get update
 
@@ -37,10 +37,10 @@ RUN export ROS_DISTRO=dashing && \
     sudo apt-get install -y ros-$ROS_DISTRO-desktop \
     sudo python3-colcon-common-extensions python3-rosdep python3-argcomplete && \
     sudo apt install -y ros-dashing-launch* && \
-    sudo apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
-    sudo apt-get install -y ros-$ROS_DISTRO-test-msgs && \
-    sudo rosdep init && \
-    sudo rosdep update
+    apt-get install -y ros-$ROS_DISTRO-osrf-testing-tools-cpp && \
+    apt-get install -y ros-$ROS_DISTRO-test-msgs && \
+    rosdep init && \
+    rosdep update
 
 ## 環境設定
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
