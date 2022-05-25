@@ -3,6 +3,7 @@
 touch ok.txt
 echo $ROS_DISTRO > ROSlog.txt
 chmod ugo+x /opt/ros/$ROS_DISTRO/setup.bash 2>&1 | tee chmodlog.txt
+chmod ugo+x ./install/local_setup.bash 2>&1 | tee chmodlog.txt
 ls -l /opt/ros/$ROS_DISTRO > optlog.txt
 source /opt/ros/$ROS_DISTRO/setup.bash 2>&1 | tee setuplog.txt
 cd src
